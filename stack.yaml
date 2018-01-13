@@ -1,9 +1,14 @@
 resolver: lts-10.3
 
 extra-deps:
+  # gtk:
+    - gio-0.13.4.1
   # ff:
     - crdt-6.1
-  # ff-gui:
+  # ff-gtk:
+    - glade-0.13.1
+    - gtk-0.14.7
+  # ff-qt:
     - git: https://gitlab.com/cblp/qtah.git
       commit: cc26ea2  # branch 'fix-qmake-empty-filename', 2018-01-13
       subdirs:
@@ -17,3 +22,7 @@ extra-deps:
     - hoppy-generator-0.3.4
     - hoppy-runtime-0.3.2
     - hoppy-std-0.3.0
+
+flags:
+  gtk:
+    have-quartz-gtk: true

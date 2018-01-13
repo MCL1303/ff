@@ -55,6 +55,19 @@ executables:
     other-modules: []
     source-dirs: exe/ff-qt
 
+  ff-gtk:
+    dependencies:
+      - crdt
+      - glade
+      - gtk
+      - stm
+      - text
+
+      - ff
+
+    main: Main
+    source-dirs: exe/ff-gtk
+
 tests:
   test:
     dependencies:
