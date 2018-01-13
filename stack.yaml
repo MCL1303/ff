@@ -13,6 +13,11 @@ extra-deps:
     # - ../qtah/qtah
     # - ../qtah/qtah-cpp
     # - ../qtah/qtah-generator
+  # ff-wx:
+    - wx-0.92.3.0
+    - wxc-0.92.3.0
+    - wxcore-0.92.3.0
+    - wxdirect-0.92.3.0
   # qtah:
     - hoppy-generator-0.3.4
     - hoppy-runtime-0.3.2

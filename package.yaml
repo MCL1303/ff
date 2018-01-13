@@ -55,6 +55,18 @@ executables:
     other-modules: []
     source-dirs: exe/ff-qt
 
+  ff-wx:
+    dependencies:
+      - crdt
+      - stm
+      - text
+      - wx
+
+      - ff
+
+    main: Main
+    source-dirs: exe/ff-wx
+
 tests:
   test:
     dependencies:
