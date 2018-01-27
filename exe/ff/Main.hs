@@ -23,7 +23,7 @@ import           System.Directory (createDirectoryIfMissing, doesDirectoryExist,
                                    getHomeDirectory)
 import           System.FilePath (FilePath, takeDirectory, (</>))
 
-import           FF (cmdDone, cmdNew, cmdPostpone, getAgenda)
+import           FF (cmdDone, cmdEdit, cmdNew, cmdPostpone, getAgenda)
 import           FF.Config (Config (..), appName, getCfgFilePath, loadConfig)
 import qualified FF.Config as Config
 import           FF.Options (Cmd (..), Config (..), DataDir (..), parseOptions)
@@ -47,6 +47,10 @@ runCmd cfg@Config.Config{dataDir} cmd = case cmd of
         dir <- checkDataDir
         nv <- (`runReaderT` dir) $ cmdDone noteId
         yprint $ object ["archived" .= nv]
+    CmdEdit noteId -> do
+        dir <- checkDataDir
+        nv <- (`runReaderT` dir) $ cmdEdit noteId
+        yprint nv
     CmdNew new -> do
         dir <- checkDataDir
         noteView <- (`runReaderT` dir) $ cmdNew new
